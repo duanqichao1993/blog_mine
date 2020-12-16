@@ -1,0 +1,19 @@
+<html>
+  <h2> book detail </h2>
+  <p>
+    <strong>BookName:</strong>
+    <%= @book.name%>
+  </p>
+  <p>
+    <strong>author:</strong>
+    <%= @book.author%>
+  </p>
+  <p>
+    <strong>ISBN:</strong>
+    <%= @book.isbn_number%>
+  </p>
+
+  <div>
+    <%=link_to 'All book list' , books_path %>
+  </div>
+</html>

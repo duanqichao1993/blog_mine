@@ -1,0 +1,23 @@
+<html lang="zh">
+<h2>book list </h2>
+
+<%=link_to 'create book' ,new_book_path %>
+<table>
+  <tr>
+    <th id="bookTitle">Book Name</th>
+    <th>author</th>
+    <th>ISBN</th>
+  </tr>
+  <% @all_book.each do |book| %>
+    <tr>
+      <td id="bookName"><%= book.name %></td>
+      <td><%= book.author %></td>
+      <td><%= book.isbn_number %></td>
+      <td><%= link_to 'show', book_path(book) %></td>
+      <td><%= link_to 'edit', edit_book_path(book) %></td>
+      <td><%= link_to 'delete', book_path(book) ,method: :delete ,
+                      data: { confirm: 'Are you sure?'}%></td>
+    </tr>
+  <% end %>
+</table>
+</html>
